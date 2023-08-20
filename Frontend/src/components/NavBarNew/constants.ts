@@ -40,7 +40,7 @@ const DEFAULT_NAV: NavItem[] = [
       },
     ],
   },
-  {
+  /*{
     label: 'Bonds',
     order: 2,
     href: '/bonds-landing',
@@ -114,7 +114,7 @@ const DEFAULT_NAV: NavItem[] = [
         icon: '/images/navbar/governance',
       },
     ],
-  },
+  },*/
 ]
 
 const DEX_ONLY_EXCHANGE_ITEMS = {
@@ -141,7 +141,7 @@ const DEX_ONLY_EXCHANGE_ITEMS = {
 
 export const BNB_NAV: NavItem[] = [
   ...DEFAULT_NAV,
-  {
+  /*{
     label: 'Staking',
     order: 4,
     icon: '/images/navbar/pools',
@@ -165,7 +165,7 @@ export const BNB_NAV: NavItem[] = [
         icon: '/images/navbar/gnana',
       },
     ],
-  },
+  },*/
 ].sort((a, b) => a.order - b.order)
 
 const MATIC_NAV: NavItem[] = [
