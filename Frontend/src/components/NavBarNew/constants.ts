@@ -32,12 +32,12 @@ const DEFAULT_NAV: NavItem[] = [
         href: '/zap',
         icon: '/images/navbar/liquidity',
       },
-      {
-        itemLabel: 'Pro Trading',
-        itemDesc: 'Utilize Enhanced trading options & charting.',
-        href: 'https://pro.apeswap.finance',
-        icon: '/images/navbar/pro',
-      },
+      // {
+      //   itemLabel: 'Pro Trading',
+      //   itemDesc: 'Utilize Enhanced trading options & charting.',
+      //   href: 'https://pro.apeswap.finance',
+      //   icon: '/images/navbar/pro',
+      // },
     ],
   },
   /*{
@@ -128,12 +128,12 @@ const DEX_ONLY_EXCHANGE_ITEMS = {
       href: '/swap',
       icon: '/images/navbar/swap',
     },
-    {
-      itemLabel: 'Pro Trading',
-      itemDesc: 'Utilize Enhanced trading options & charting.',
-      href: 'https://pro.apeswap.finance',
-      icon: '/images/navbar/pro',
-    },
+    // {
+    //   itemLabel: 'Pro Trading',
+    //   itemDesc: 'Utilize Enhanced trading options & charting.',
+    //   href: 'https://pro.apeswap.finance',
+    //   icon: '/images/navbar/pro',
+    // },
   ],
 }
 
@@ -141,7 +141,7 @@ const DEX_ONLY_EXCHANGE_ITEMS = {
 
 export const BNB_NAV: NavItem[] = [
   ...DEFAULT_NAV,
-  /*{
+  {
     label: 'Staking',
     order: 4,
     icon: '/images/navbar/pools',
@@ -158,14 +158,14 @@ export const BNB_NAV: NavItem[] = [
         href: '/farms',
         icon: '/images/navbar/farms',
       },
-      {
-        itemLabel: 'GNANA',
-        itemDesc: 'Unlock exclusive ecosystem capabilities.',
-        href: '/gnana',
-        icon: '/images/navbar/gnana',
-      },
+      // {
+      //   itemLabel: 'GNANA',
+      //   itemDesc: 'Unlock exclusive ecosystem capabilities.',
+      //   href: '/gnana',
+      //   icon: '/images/navbar/gnana',
+      // },
     ],
-  },*/
+  },
 ].sort((a, b) => a.order - b.order)
 
 const MATIC_NAV: NavItem[] = [

@@ -172,12 +172,13 @@ const components = {
     },
   },
   borders: {
-    primaryButton: '3px solid #FFB300',
+    primaryButton: '3px solid #A96352',
     primaryBtnDisable: '3px solid transparent',
-    secondaryButton: '3px solid #FFB300',
+    secondaryButton: '3px solid #A96352',
     secondaryButtonDisable: '3px solid #FDFBF5',
     mode: {
       dark: {
+        // secondaryButtonDisable: '3px solid #F9F4E7',
         secondaryButtonDisable: '3px solid #F9F4E7',
       },
     },
