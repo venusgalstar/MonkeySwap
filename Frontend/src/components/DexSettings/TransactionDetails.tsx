@@ -43,7 +43,7 @@ const TransactionDetails = ({ isZap }: { isZap?: boolean }) => {
               width: '55px',
               borderRadius: '10px',
               background:
-                userSlippageTolerance !== 'auto' && userSlippageTolerance.toFixed(2) === '0.10' ? 'highLighted' : 'white3',
+                userSlippageTolerance !== 'auto' && userSlippageTolerance.toFixed(2) === '0.10' ? '#FFB300' : 'white3',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
@@ -61,7 +61,7 @@ const TransactionDetails = ({ isZap }: { isZap?: boolean }) => {
               width: '55px',
               borderRadius: '10px',
               background:
-                userSlippageTolerance !== 'auto' && userSlippageTolerance.toFixed(2) === '0.50' ? 'highLighted' : 'white3',
+                userSlippageTolerance !== 'auto' && userSlippageTolerance.toFixed(2) === '0.50' ? '#FFB300' : 'white3',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
@@ -79,7 +79,7 @@ const TransactionDetails = ({ isZap }: { isZap?: boolean }) => {
               width: '55px',
               borderRadius: '10px',
               background:
-                userSlippageTolerance !== 'auto' && userSlippageTolerance.toFixed(2) === '1.00' ? 'highLighted' : 'white3',
+                userSlippageTolerance !== 'auto' && userSlippageTolerance.toFixed(2) === '1.00' ? '#FFB300' : 'white3',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',

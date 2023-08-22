@@ -5,7 +5,8 @@ import { ChainId } from './chains'
 type AddressMap = { [chainId: number]: string }
 
 export const BANANA_ADDRESSES: AddressMap = {
-  [SupportedChainId.BSC_TESTNET]: '0x4Fb99590cA95fc3255D9fA66a1cA46c43C34b09a',
+  [SupportedChainId.BSC_TESTNET]: '0x46E8a806c1CEECb7ED85c0755d2aEc1d4c2B86FC',
+  // [SupportedChainId.BSC_TESTNET]: '0x4Fb99590cA95fc3255D9fA66a1cA46c43C34b09a',
   [SupportedChainId.BSC]: '0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95',
   [SupportedChainId.POLYGON]: '0x5d47baba0d66083c52009271faf3f50dcc01023c',
   [SupportedChainId.MAINNET]: '0x92df60c51c710a1b1c20e42d85e221f3a1bfc7f2',
@@ -26,7 +27,8 @@ export const V2_FACTORY_ADDRESSES: AddressMap = {
   [SupportedChainId.POLYGON]: '0xCf083Be4164828f00cAE704EC15a36D711491284',
   [SupportedChainId.POLYGON_MUMBAI]: '0xe145a77c21437e3FD32ce2731833114F0B53405b',
   [SupportedChainId.BSC]: '0x0841BD0B734E4F5853f0dD8d7Ea041c241fb0Da6',
-  [SupportedChainId.BSC_TESTNET]: '0x152349604d49c2af10adee94b918b051104a143e',
+  [SupportedChainId.BSC_TESTNET]: '0x99Ef8DdE79073aaFe3D6daA13157a7525303E0eB',
+  // [SupportedChainId.BSC_TESTNET]: '0x152349604d49c2af10adee94b918b051104a143e',
   [SupportedChainId.TLOS]: '0x411172Dfcd5f68307656A1ff35520841C2F7fAec',
   [SupportedChainId.ARBITRUM_ONE]: '0xCf083Be4164828f00cAE704EC15a36D711491284',
 }
@@ -36,7 +38,8 @@ export const V2_ROUTER_ADDRESSES: AddressMap = {
   [SupportedChainId.POLYGON]: '0xC0788A3aD43d79aa53B09c2EaCc313A787d1d607',
   [SupportedChainId.POLYGON_MUMBAI]: '0x8fCf4B197A9Df7ab4ed511932cA6c8E1a8fe2F1d',
   [SupportedChainId.BSC]: '0xcf0febd3f17cef5b47b0cd257acf6025c5bff3b7',
-  [SupportedChainId.BSC_TESTNET]: '0x3380ae82e39e42ca34ebed69af67faa0683bb5c1',
+  [SupportedChainId.BSC_TESTNET]: '0x616C0B32c04cca88af937D147fCC8585e57cAa81',
+  // [SupportedChainId.BSC_TESTNET]: '0x3380ae82e39e42ca34ebed69af67faa0683bb5c1',
   [SupportedChainId.TLOS]: '0xb9667Cf9A495A123b0C43B924f6c2244f42817BE',
   [SupportedChainId.ARBITRUM_ONE]: '0x7d13268144adcdbEBDf94F654085CC15502849Ff',
 }
@@ -74,7 +77,8 @@ export const SWAP_ROUTER_ADDRESSES: AddressMap = {
 }
 
 export const PRICE_GETTER_ADDRESSES: AddressMap = {
-  [SupportedChainId.BSC_TESTNET]: '0x85d2C626E28a42E184cF8e32db1461013D23331D',
+  [SupportedChainId.BSC_TESTNET]: '0x85d2C626E28a42E184cF8e32db1461013D23331D', // Not changed
+  // [SupportedChainId.BSC_TESTNET]: '0x85d2C626E28a42E184cF8e32db1461013D23331D',
   [SupportedChainId.BSC]: '0x945b9E730f35046c5bf24117478D651999377831',
   [SupportedChainId.POLYGON]: '0x241ebA867Bee0Dd50a8Ca54732A6C05815C50Cc5',
   [SupportedChainId.MAINNET]: '0xaFa3cb0CC2c83f81e6389f3A2229cfdc1F8420Dd',
@@ -95,7 +99,8 @@ export const MULTICALL: AddressMap = {
 
 export const MULTICALL_V2: AddressMap = {
   [SupportedChainId.BSC]: '0x38ce767d81de3940CFa5020B55af1A400ED4F657',
-  [SupportedChainId.BSC_TESTNET]: '0x67ADCB4dF3931b0C5Da724058ADC2174a9844412',
+  [SupportedChainId.BSC_TESTNET]: '0xc4f5D2fAc342A5B492CD782Fed6ac8595b9a8b1f',
+  // [SupportedChainId.BSC_TESTNET]: '0xc4f5D2fAc342A5B492CD782Fed6ac8595b9a8b1f',
   [SupportedChainId.POLYGON]: '0x95028E5B8a734bb7E2071F96De89BABe75be9C8E',
   [SupportedChainId.MAINNET]: '0xeefBa1e63905eF1D7ACbA5a8513c70307C1cE441',
   [SupportedChainId.TLOS]: '0xa1a283f10f578201a97a8f69d8c15828b778f04b',
@@ -110,16 +115,19 @@ export const MULTICALL_V2: AddressMap = {
 
 export const GNANA_ADDRESSES: AddressMap = {
   [SupportedChainId.BSC]: '0xdDb3Bd8645775F59496c821E4F55A7eA6A6dc299',
-  [SupportedChainId.BSC_TESTNET]: '0x9407026d236DEAE22CC1F3c419A9e47CBfCFE9E5',
+  [SupportedChainId.BSC_TESTNET]: '0xc507F4180b5D426129F9a671c7a9d7C4Db978C37',
+  // [SupportedChainId.BSC_TESTNET]: '0x9407026d236DEAE22CC1F3c419A9e47CBfCFE9E5',
 }
 
 export const TREASURY_ADDRESSES: AddressMap = {
   [SupportedChainId.BSC]: '0xec4b9d1fd8A3534E31fcE1636c7479BcD29213aE',
-  [SupportedChainId.BSC_TESTNET]: '0xbC5ed0829365a0d5bc3A4956A6A0549aE17f41Ab',
+  [SupportedChainId.BSC_TESTNET]: '0x71813af382Cb91949CAbeEFD13C00BBB507eA412',
+  // [SupportedChainId.BSC_TESTNET]: '0xbC5ed0829365a0d5bc3A4956A6A0549aE17f41Ab',
 }
 
 export const MASTER_CHEF_V1_ADDRESS: AddressMap = {
-  [SupportedChainId.BSC_TESTNET]: '0xbbC5e1cD3BA8ED639b00927115e5f0e0040aA613',
+  [SupportedChainId.BSC_TESTNET]: '0x91eb7c43B5305B03127D67B6A3bf57087A0C4364',
+  // [SupportedChainId.BSC_TESTNET]: '0xbbC5e1cD3BA8ED639b00927115e5f0e0040aA613',
   [SupportedChainId.BSC]: '0x5c8D727b265DBAfaba67E050f2f739cAeEB4A6F9',
 }
 export const MASTER_CHEF_V2_ADDRESS: AddressMap = {
@@ -135,7 +143,8 @@ export const SOUS_CHEF_ADDRESS: AddressMap = {
   [SupportedChainId.BSC]: '0x54aff400858Dcac39797a81894D9920f16972D1D',
 }
 export const MASTER_CHEF: AddressMap = {
-  [SupportedChainId.BSC_TESTNET]: '0xbbC5e1cD3BA8ED639b00927115e5f0e0040aA613',
+  [SupportedChainId.BSC_TESTNET]: '0x91eb7c43B5305B03127D67B6A3bf57087A0C4364',
+  // [SupportedChainId.BSC_TESTNET]: '0xbbC5e1cD3BA8ED639b00927115e5f0e0040aA613',
   [SupportedChainId.BSC]: '0x5c8D727b265DBAfaba67E050f2f739cAeEB4A6F9',
 }
 export const MASTER_CHEF_V2: AddressMap = {

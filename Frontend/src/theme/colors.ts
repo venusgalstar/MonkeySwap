@@ -9,7 +9,7 @@ const Colors = {
   primaryDark: '#0B0B0B',
   success: '#38A611',
   error: '#DF4141',
-  highLighted: '#FFB300',
+  // highLighted: '#FFB300',
   yellow: '#A96352',
   info: '#4D4040',
   primaryButtonDisable: 'rgba(66, 66, 66, 0.5)',
