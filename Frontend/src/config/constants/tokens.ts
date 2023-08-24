@@ -170,6 +170,8 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     'Wrapped MATIC',
   ),
   [ChainId.BSC]: new Token(ChainId.BSC, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WBNB', 'Wrapped BNB'),
+  // newly added
+  [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, '0xae13d989dac2f0debff460ac112a837c89baa7cd', 18, 'WBNB', 'Wrapped BNB'),
   [ChainId.TLOS]: new Token(ChainId.TLOS, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WTLOS', 'Wrapped TLOS'),
   [ChainId.AVALANCHE]: new Token(
     ChainId.AVALANCHE,

@@ -53,7 +53,7 @@ export const FARMS: Record<string, string> = {
 }
 
 export const DOC_LINKS: Record<string, string> = {
-  HOME: 'https://apeswap.gitbook.io/apeswap-finance/welcome/master',
+  HOME: 'https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision',
   JUNGLE_FARMS: 'https://apeswap.gitbook.io/apeswap-finance/product-and-features/stake/farms/',
   FARMS: `https://apeswap.gitbook.io/apeswap-finance/product-and-features/stake/farms/`,
   SWAP: 'https://apeswap.gitbook.io/apeswap-finance/product-and-features/exchange/swap',

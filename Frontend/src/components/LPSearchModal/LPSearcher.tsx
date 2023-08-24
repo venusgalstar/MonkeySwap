@@ -34,7 +34,7 @@ function LPSearcher({ onSelect }: LPSearcherProps) {
       <Flex sx={styles.inputContainer}>
         <StyledInput
           id="token-search-input"
-          placeholder={t('Name or Address')}
+          placeholder={t('TokenListModal')}
           autoComplete="off"
           value={query}
           onChange={handleChangeQuery}

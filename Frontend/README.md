@@ -21,7 +21,7 @@ Once everything is downloaded & installed, simply run `yarn dev` to run the repo
 
 ### Learn More About ApeSwap
 
-Interested in learning more about ApeSwap.Finance? Head over to our [official documentation](https://apeswap.gitbook.io/apeswap-finance/welcome/master) to read and learn more about our features, functionality, DAO, and ecosystem! 😊
+Interested in learning more about ApeSwap.Finance? Head over to our [official documentation](https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision) to read and learn more about our features, functionality, DAO, and ecosystem! 😊
 
 #### Socials
 

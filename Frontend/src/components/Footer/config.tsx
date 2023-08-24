@@ -3,7 +3,7 @@ import { icons } from 'components/uikit/Svg/types'
 export const SUPPORT_LINKS: { label: string; href: string }[] = [
   {
     label: 'FAQ',
-    href: 'https://apeswap.gitbook.io/apeswap-finance/welcome/master',
+    href: 'https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision',
   },
   {
     label: 'Discord',
@@ -41,7 +41,7 @@ export const ENGAGE_LINKS: { label: string; href: string }[] = [
 export const ACCESS_LINKS: { label: string; href: string }[] = [
   {
     label: 'Docs',
-    href: 'https://apeswap.gitbook.io/apeswap-finance/welcome/master',
+    href: 'https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision',
   },
   {
     label: 'Maximizers',

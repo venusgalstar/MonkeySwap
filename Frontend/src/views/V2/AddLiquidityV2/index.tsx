@@ -19,6 +19,7 @@ const AddLiquidityV2 = ({ currencyIdA, currencyIdB }: { currencyIdA: string; cur
   const { t } = useTranslation()
   const currencyA = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
+
   // Mint state
   const { independentField, typedValue, otherTypedValue } = useMintState()
   const {

@@ -4,9 +4,9 @@ import { ChainId } from './chains'
 
 type AddressMap = { [chainId: number]: string }
 
+// [SupportedChainId.BSC_TESTNET]: '0x0004Fb99590cA95fc3255D9fA66a1cA46c43C34b09a',
 export const BANANA_ADDRESSES: AddressMap = {
-  [SupportedChainId.BSC_TESTNET]: '0x46E8a806c1CEECb7ED85c0755d2aEc1d4c2B86FC',
-  // [SupportedChainId.BSC_TESTNET]: '0x4Fb99590cA95fc3255D9fA66a1cA46c43C34b09a',
+  [SupportedChainId.BSC_TESTNET]: '0x04Ad67E9f3baC271bddb9E9d37b1D6758bF4F2c7',
   [SupportedChainId.BSC]: '0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95',
   [SupportedChainId.POLYGON]: '0x5d47baba0d66083c52009271faf3f50dcc01023c',
   [SupportedChainId.MAINNET]: '0x92df60c51c710a1b1c20e42d85e221f3a1bfc7f2',
@@ -27,7 +27,7 @@ export const V2_FACTORY_ADDRESSES: AddressMap = {
   [SupportedChainId.POLYGON]: '0xCf083Be4164828f00cAE704EC15a36D711491284',
   [SupportedChainId.POLYGON_MUMBAI]: '0xe145a77c21437e3FD32ce2731833114F0B53405b',
   [SupportedChainId.BSC]: '0x0841BD0B734E4F5853f0dD8d7Ea041c241fb0Da6',
-  [SupportedChainId.BSC_TESTNET]: '0x99Ef8DdE79073aaFe3D6daA13157a7525303E0eB',
+  [SupportedChainId.BSC_TESTNET]: '0xc26D0Cec2292Eeb382CEC2781BDCd8796f88dfCc',
   // [SupportedChainId.BSC_TESTNET]: '0x152349604d49c2af10adee94b918b051104a143e',
   [SupportedChainId.TLOS]: '0x411172Dfcd5f68307656A1ff35520841C2F7fAec',
   [SupportedChainId.ARBITRUM_ONE]: '0xCf083Be4164828f00cAE704EC15a36D711491284',
@@ -38,7 +38,7 @@ export const V2_ROUTER_ADDRESSES: AddressMap = {
   [SupportedChainId.POLYGON]: '0xC0788A3aD43d79aa53B09c2EaCc313A787d1d607',
   [SupportedChainId.POLYGON_MUMBAI]: '0x8fCf4B197A9Df7ab4ed511932cA6c8E1a8fe2F1d',
   [SupportedChainId.BSC]: '0xcf0febd3f17cef5b47b0cd257acf6025c5bff3b7',
-  [SupportedChainId.BSC_TESTNET]: '0x616C0B32c04cca88af937D147fCC8585e57cAa81',
+  [SupportedChainId.BSC_TESTNET]: '0xc4E5D6ecc7bf5EDbf4ac67821a7249cb660dA970',
   // [SupportedChainId.BSC_TESTNET]: '0x3380ae82e39e42ca34ebed69af67faa0683bb5c1',
   [SupportedChainId.TLOS]: '0xb9667Cf9A495A123b0C43B924f6c2244f42817BE',
   [SupportedChainId.ARBITRUM_ONE]: '0x7d13268144adcdbEBDf94F654085CC15502849Ff',

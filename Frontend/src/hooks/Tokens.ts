@@ -6,6 +6,7 @@ import { getTokenFilter } from 'lib/hooks/useTokenList/filtering'
 import { useMemo } from 'react'
 import { TokenAddressMap, useAllLists, useCombinedActiveList, useUnsupportedTokenList } from 'state/lists/hooks/hooks'
 import { WrappedTokenInfo } from 'state/lists/wrappedTokenInfo'
+import { TokenInfo } from '@uniswap/token-lists'
 import { useUserAddedTokens } from 'state/user/hooks'
 import { ChainId } from '../config/constants/chains'
 
@@ -99,7 +100,8 @@ export function useIsUserAddedToken(currency: Currency | undefined | null): bool
 // null if loading or null was passed
 // otherwise returns the token
 export function useToken(tokenAddress?: string | null): Token | null | undefined {
-  const tokens = useAllTokens()
+  let tokens = useAllTokens()
+  console.log('tokens', tokens);
   return useTokenFromMapOrNetwork(tokens, tokenAddress)
 }
 
