@@ -36,10 +36,8 @@ const Tutorial: React.FC<{
       case 'swap': {
         return {
           type: `BNB-dex`,
-          title: `ApeSwap's Cross-Chain Dex`,
-          description: `Easily trade or bridge nearly ANY token on ${networkLabel} ${
-            chainId === SupportedChainId.BSC ? 'Chain' : 'Network'
-          }!`,
+          title: `Monkeys Market DEX`,
+          description: `Securely trade any assets on our decentralized exchange with instant transactions.`,
           slides: account ? SwapSlides() : [<ConnectWalletSlide key={0} />, ...SwapSlides()],
           isConnected: !!account,
         }

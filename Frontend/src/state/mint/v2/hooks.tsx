@@ -91,9 +91,16 @@ export function useDerivedMintInfo(
     [currencyA, currencyB],
   )
 
+  console.log('-A-', currencyA);
+  console.log('-B-', currencyB);
+
   // pair
   const [pairState, pair] = useV2Pair(currencies[Field.CURRENCY_A], currencies[Field.CURRENCY_B])
   const totalSupply = useTotalSupply(pair?.liquidityToken)
+
+  console.log('pairState', pairState, PairState.NOT_EXISTS);
+  console.log('pair', pair);
+  console.log('totalSupply', totalSupply);
 
   const noLiquidity: boolean =
     pairState === PairState.NOT_EXISTS ||
@@ -104,6 +111,8 @@ export function useDerivedMintInfo(
         JSBI.equal(pair.reserve0.quotient, ZERO) &&
         JSBI.equal(pair.reserve1.quotient, ZERO),
     )
+
+  console.log('noLiquidity', noLiquidity);
 
   // balances
   const balances = useCurrencyBalances(

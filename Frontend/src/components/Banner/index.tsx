@@ -23,7 +23,8 @@ const Banner: React.FC<{
   const { push } = useRouter()
   const [colorMode] = useColorMode()
   const { t } = useTranslation()
-  const loaded = `../images/banners/${banner}-${colorMode === 'dark' ? 'night' : 'day'}.svg`
+  // const loaded = `../images/banners/${banner}-${colorMode === 'dark' ? 'night' : 'day'}.svg`
+  const loaded = `../images/banners/${banner}.svg`
   const handleHideTips = useHideTips()
 
   const openBannerLink = (bannerLink: string) => {

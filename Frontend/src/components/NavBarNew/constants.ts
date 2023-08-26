@@ -16,7 +16,7 @@ export const getChainNavList = (chainId: ChainId): NavItem[] => {
 // This is the default minimum nav we assume each chain will have
 const DEFAULT_NAV: NavItem[] = [
   {
-    label: 'Exchange',
+    label: 'Swap',
     order: 1,
     icon: '/images/navbar/trading',
     items: [
@@ -142,7 +142,7 @@ const DEX_ONLY_EXCHANGE_ITEMS = {
 export const BNB_NAV: NavItem[] = [
   ...DEFAULT_NAV,
   {
-    label: 'Staking',
+    label: 'Farm',
     order: 4,
     icon: '/images/navbar/pools',
     items: [

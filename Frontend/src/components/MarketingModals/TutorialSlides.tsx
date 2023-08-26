@@ -18,21 +18,13 @@ export const SwapSlides = () => {
   return [
     <Slide
       key={1}
-      step="Step 1"
-      slideTitle="Select Tokens & Amount"
-      slideContent={<Text>{t('Select the tokens & chains you want to trade. Then enter your preferred amount.')}</Text>}
-    />,
-    <Slide
-      key={2}
       step="Step 2"
-      slideTitle="Approve Router"
+      slideTitle="Select Tokens and Quantities"
       slideContent={
         <>
-          <Text>{t(`You'll need to APPROVE the router just once.`)}</Text>
-          <Text sx={styles.content}>
-            {t(
-              'Keep in mind that ApeSwap routes through several different liquidity sources, but you only need to approve the router once!',
-            )}
+          <Text sx={styles.content}>{t('Choose the tokens you want to trade and indicate the desired quantities.')}</Text>
+          <Text sx={{ fontWeight: 300 }}>
+            Experience seamless and efficient trading with Monkeys Market DEX.
           </Text>
         </>
       }
@@ -40,13 +32,29 @@ export const SwapSlides = () => {
     <Slide
       key={2}
       step="Step 3"
-      slideTitle="Confirm The Swap"
+      slideTitle="Approve Tokens"
+      slideContent={
+        <>
+          <Text sx={styles.content}>{t(`Using your connected wallet, approve the selected token. This step only needs to be done once per token.`)}</Text>
+          <Text sx={{ fontWeight: 300 }}>
+            Experience seamless and efficient trading with Monkeys Market DEX.
+          </Text>
+        </>
+      }
+    />,
+    <Slide
+      key={2}
+      step="Step 4"
+      slideTitle="Confirm and Swap"
       slideContent={
         <>
           <Text>
             {t(
-              'You’ll need to select APPROVE, SWAP/BRIDGE, and then CONFIRM. Approve all transactions in your wallet. Most transactions will take only a few seconds, but bridging transactions can take several minutes.',
+              'Upon pressing the swap button, you will be prompted to approve the transaction in your wallet. Take a moment to review the associated fees, and once satisfied, click "confirm." Your transaction should be processed within seconds.',
             )}
+          </Text>
+          <Text sx={{ fontWeight: 300 }}>
+            Experience seamless and efficient trading with Monkeys Market DEX.
           </Text>
         </>
       }
@@ -1323,30 +1331,15 @@ export const ConnectWalletSlide = () => {
   )
   return (
     <Slide
-      step="Step 0"
+      step="Step 1"
       slideTitle="Connect Your Wallet"
       slideContent={
         <>
-          <Text>
-            <Text sx={styles.yellow} onClick={onPresentWalletConnectModal}>
-              {t('Click here')}
-            </Text>{' '}
-            {t('to connect your wallet to ApeSwap.')}
+          <Text sx={styles.yellow} onClick={onPresentWalletConnectModal}>
+            {t('Connect Wallet')}
           </Text>
-          <Text sx={{ fontStyle: 'italic', fontWeight: 300 }}>
-            {t(
-              `Don’t have a wallet? A full setup guide for MetaMask on ${
-                NETWORK_LABEL[chainId as SupportedChainId]
-              } can be found `,
-            )}
-            <Link
-              href={getMetamaskLinks(chainId as SupportedChainId)}
-              target="_blank"
-              rel="noreferrer noopener"
-              sx={styles.yellow}
-            >
-              {t('here')}
-            </Link>
+          <Text sx={{ fontWeight: 300 }}>
+            Experience seamless and efficient trading with Monkeys Market DEX.
           </Text>
         </>
       }

@@ -152,6 +152,8 @@ const AddLiquidity = ({
     noLiquidity && (onRightRangeInput(''), onLeftRangeInput(''))
   }, [noLiquidity, onRightRangeInput, onLeftRangeInput])
 
+  console.log('A->B', currencyIdA, currencyIdB);
+
   return (
     <Flex sx={{ width: '100%', justifyContent: 'center', flexDirection: flipV3Layout ? 'auto' : 'row-reverse' }}>
       <Flex variant="flex.dexContainer">

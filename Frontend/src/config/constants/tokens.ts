@@ -213,6 +213,10 @@ function isBNB(chainId: number): chainId is ChainId.BSC {
   return chainId === ChainId.BSC
 }
 
+function isBNBTestnet(chainId: number): chainId is ChainId.BSC_TESTNET {
+  return chainId === ChainId.BSC_TESTNET
+}
+
 function isAvax(chainId: number): chainId is ChainId.AVALANCHE {
   return chainId === ChainId.AVALANCHE
 }
@@ -337,6 +341,24 @@ class BNBNativeCurrency extends NativeCurrency {
   }
 }
 
+class BNBTestnetNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId
+  }
+
+  get wrapped(): Token {
+    if (!isBNBTestnet(this.chainId)) throw new Error('Not tbnb')
+    const wrapped = WRAPPED_NATIVE_CURRENCY[this.chainId]
+    invariant(wrapped instanceof Token)
+    return wrapped
+  }
+
+  public constructor(chainId: number) {
+    if (!isBNBTestnet(chainId)) throw new Error('Not tbnb')
+    super(chainId, 18, 'TBNB', 'TBNB')
+  }
+}
+
 class ExtendedEther extends Ether {
   public get wrapped(): Token {
     const wrapped = WRAPPED_NATIVE_CURRENCY[this.chainId]
@@ -368,6 +390,8 @@ export function nativeOnChain(chainId: number): NativeCurrency | Token {
     nativeCurrency = new MaticNativeCurrency(selectedChain)
   } else if (isBNB(selectedChain)) {
     nativeCurrency = new BNBNativeCurrency(selectedChain)
+  } else if (isBNBTestnet(selectedChain)) {
+    nativeCurrency = new BNBTestnetNativeCurrency(selectedChain)
   } else if (isAvax(selectedChain)) {
     nativeCurrency = new AvaxNativeCurrency(selectedChain)
   } else if (isFantom(selectedChain)) {

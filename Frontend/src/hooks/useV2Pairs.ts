@@ -21,9 +21,22 @@ export function useV2Pairs(currencies: [Currency | undefined, Currency | undefin
     [currencies],
   )
 
+  console.log('useV2Pairs');
+  console.log('-------------------------------------');
+  console.log(tokens);
+  tokens.map(([tokenA, tokenB]) => {
+    console.log('tokenA', tokenA);
+    console.log('tokenB', tokenB);
+  })
+  console.log('-------------------------------------');
+
   const pairAddresses = useMemo(
     () =>
       tokens.map(([tokenA, tokenB]) => {
+
+        console.log('tokenA', tokenA);
+        console.log('tokenB', tokenB);
+
         return tokenA &&
           tokenB &&
           tokenA.chainId === tokenB.chainId &&
@@ -34,6 +47,8 @@ export function useV2Pairs(currencies: [Currency | undefined, Currency | undefin
       }),
     [tokens],
   )
+
+  console.log('pairAddresses', pairAddresses);
 
   const results = useMultipleContractSingleData(pairAddresses, PAIR_INTERFACE, 'getReserves')
 
