@@ -34,16 +34,6 @@ const AddLiquidityV2 = ({ currencyIdA, currencyIdB }: { currencyIdA: string; cur
     error,
   } = useDerivedMintInfo(currencyA ?? undefined, currencyB ?? undefined)
 
-  console.log('dependentField', dependentField);
-  console.log('currencies', currencies);
-  console.log('currencyBalances', currencyBalances);
-  console.log('parsedAmounts', parsedAmounts);
-  console.log('price', price);
-  console.log('noLiquidity', noLiquidity);
-  console.log('liquidityMinted', liquidityMinted);
-  console.log('poolTokenPercentage', poolTokenPercentage);
-  console.log('error', error);
-
   // Navigation
   const handleCurrencyASelect = useHandleCurrencyASelect({ currencyIdB, currencyIdA })
   const handleCurrencyBSelect = useHandleCurrencyBSelect({ currencyIdA, currencyIdB })

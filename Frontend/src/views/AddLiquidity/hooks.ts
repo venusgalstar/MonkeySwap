@@ -15,9 +15,6 @@ export const useHandleCurrencyASelect = ({
   return useCallback(
     (currencyA: Currency) => {
       const newCurrencyIdA = currencyId(currencyA)
-
-      console.log('>>>> currencyA', newCurrencyIdA);
-
       if (newCurrencyIdA === currencyIdB) {
         push(`/add-liquidity/${currencyIdB}/${currencyIdA}`)
       } else {
@@ -39,9 +36,6 @@ export const useHandleCurrencyBSelect = ({
   return useCallback(
     (currencyB: Currency) => {
       const newCurrencyIdB = currencyId(currencyB)
-
-      console.log('>>>> currencyB', newCurrencyIdB);
-
       if (currencyIdA === newCurrencyIdB) {
         if (currencyIdB) {
           push(`/add-liquidity/?currencyIdB=${currencyIdB}/${newCurrencyIdB}`)

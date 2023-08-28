@@ -101,7 +101,6 @@ export function useIsUserAddedToken(currency: Currency | undefined | null): bool
 // otherwise returns the token
 export function useToken(tokenAddress?: string | null): Token | null | undefined {
   let tokens = useAllTokens()
-  // console.log('tokens', tokens);
   return useTokenFromMapOrNetwork(tokens, tokenAddress)
 }
 
