@@ -18,14 +18,13 @@ export const getMetamaskLinks = (chainId: SupportedChainId) => {
 }
 
 export const ROUTE_NAMES: Record<string, string> = {
-  '/': 'HOME',
+  '/': 'SWAP',
   '/jungle-farms': 'JUNGLE_FARMS',
   '/farms': 'FARMS',
   '/swap': 'SWAP',
   '/pools': 'POOLS',
   '/maximizers': 'MAXIMIZERS_VAULTS',
   '/add': 'ADD_LIQUIDITY',
-  //'/v3-add-liquidity': 'ADD_LIQUIDITY',
   '/add-liquidity': 'ADD_LIQUIDITY_V2',
   '/liquidity': 'ADD_LIQUIDITY_V2',
   '/zap': 'ADD_LIQUIDITY_V2',
@@ -60,11 +59,11 @@ export const DOC_LINKS: Record<string, string> = {
   POOLS: 'https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision',
   MAXIMIZERS_VAULTS: 'https://apeswap.gitbook.io/apeswap-finance/product-and-features/stake/vaults',
   ADD_LIQUIDITY:
-    'https://apeswap.gitbook.io/apeswap-finance/product-and-features/exchange/liquidity/how-to-add-liquidity-v3',
+    'https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision',
   ADD_LIQUIDITY_V2:
-    'https://apeswap.gitbook.io/apeswap-finance/product-and-features/exchange/liquidity/how-to-add-liquidity-v2',
+    'https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision',
   LIQUIDITY:
-    'https://apeswap.gitbook.io/apeswap-finance/product-and-features/exchange/liquidity/how-to-add-liquidity-v3',
+    'https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision',
   ORDERS: 'https://apeswap.gitbook.io/apeswap-finance/product-and-features/exchange/limit-orders',
   IAO: 'https://apeswap.gitbook.io/apeswap-finance/product-and-features/raise/initial-ape-offerings-iaos',
   GNANA: 'https://apeswap.gitbook.io/apeswap-finance/welcome/apeswap-tokens/gnana',

@@ -64,11 +64,7 @@ const Footer = () => {
               })}
             </Flex>
             <Flex>
-              <Flex
-                sx={{ alignItems: 'center', textDecoration: 'none' }}
-                as={Link}
-                href="https://legacy.apeswap.finance/info"
-              >
+              <Flex sx={{ alignItems: 'center', textDecoration: 'none' }} >
                 <Svg icon="banana_token" width={35} />
                 {bananaPrice ? (
                   <Text color="primaryBright" ml="7px" weight={600}>

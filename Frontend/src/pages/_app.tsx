@@ -4,9 +4,7 @@ import { ThemeProvider } from 'theme-ui'
 import store from 'state'
 import { theme } from 'theme'
 import { Provider } from 'react-redux'
-import Footer from 'components/Footer'
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { LanguageProvider } from 'contexts/Localization'
 import ModalProvider from 'contexts/ModalContext'
 import Web3Provider from 'contexts/Web3Provider'
@@ -86,7 +84,6 @@ export default function App({ Component, pageProps, initialColorMode }: MyAppPro
                             <Popups />
                             <Component {...pageProps} />
                             <Analytics />
-                            <Footer />
                           </Blocklist>
                         </ModalProvider>
                       </LanguageProvider>

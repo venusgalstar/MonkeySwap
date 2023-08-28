@@ -32,89 +32,8 @@ const DEFAULT_NAV: NavItem[] = [
         href: '/zap',
         icon: '/images/navbar/liquidity',
       },
-      // {
-      //   itemLabel: 'Pro Trading',
-      //   itemDesc: 'Utilize Enhanced trading options & charting.',
-      //   href: 'https://pro.apeswap.finance',
-      //   icon: '/images/navbar/pro',
-      // },
     ],
   },
-  /*{
-    label: 'Bonds',
-    order: 2,
-    href: '/bonds-landing',
-    icon: '/images/navbar/bonds',
-    items: [
-      {
-        itemLabel: 'Buy a Bond',
-        itemDesc: 'Purchase select tokens at a discount.',
-        href: '/bonds',
-        icon: '/images/navbar/bonds',
-      },
-      {
-        itemLabel: 'Bond Markets',
-        itemDesc: 'View all bonds, past & present.',
-        href: '/bond-markets',
-        icon: '/images/navbar/markets',
-      },
-      {
-        itemLabel: 'Bonds for Partners',
-        itemDesc: 'Learn about bonding use cases.',
-        href: 'https://welcome.apeswap.finance/bonds',
-        icon: '/images/navbar/bond-intro',
-      },
-    ],
-  },
-  {
-    label: 'Liquidity Health',
-    order: 3,
-    href: '/liquidity-health',
-    icon: '/images/navbar/lhd',
-  },
-  {
-    label: 'More',
-    order: 100,
-    icon: '/images/navbar/more',
-    items: [
-      {
-        itemLabel: 'ApeStats',
-        itemDesc: 'View your ApeSwap stats.',
-        href: 'https://legacy.apeswap.finance/apestats',
-        icon: '/images/navbar/stats',
-      },
-      {
-        itemLabel: 'Protocol Data',
-        itemDesc: 'Uncover protocol insights.',
-        href: '/protocol-dashboard',
-        icon: '/images/navbar/protocol',
-      },
-      {
-        itemLabel: 'Charts',
-        itemDesc: 'View DEX information.',
-        href: 'https://legacy.apeswap.finance/info',
-        icon: '/images/navbar/charts',
-      },
-      {
-        itemLabel: 'Lending',
-        itemDesc: 'Borrow and supply assets.',
-        href: 'https://lending.apeswap.finance',
-        icon: '/images/navbar/lending',
-      },
-      {
-        itemLabel: 'ApeSwap NFTs',
-        itemDesc: 'Discover ApeSwap`s NFT Offerings.',
-        href: '/nft',
-        icon: '/images/navbar/nfts',
-      },
-      {
-        itemLabel: 'Governance',
-        itemDesc: 'Participate in DAO decisions.',
-        href: 'https://Discuss.apeswap.finance',
-        icon: '/images/navbar/governance',
-      },
-    ],
-  },*/
 ]
 
 const DEX_ONLY_EXCHANGE_ITEMS = {
@@ -127,14 +46,8 @@ const DEX_ONLY_EXCHANGE_ITEMS = {
       itemDesc: 'Trade any tokens across several chains.',
       href: '/swap',
       icon: '/images/navbar/swap',
-    },
-    // {
-    //   itemLabel: 'Pro Trading',
-    //   itemDesc: 'Utilize Enhanced trading options & charting.',
-    //   href: 'https://pro.apeswap.finance',
-    //   icon: '/images/navbar/pro',
-    // },
-  ],
+    }
+  ]
 }
 
 // Start of custom navs for each chain
@@ -157,15 +70,9 @@ export const BNB_NAV: NavItem[] = [
         itemDesc: 'Stake LP Tokens to earn other tokens.',
         href: '/farms',
         icon: '/images/navbar/farms',
-      },
-      // {
-      //   itemLabel: 'GNANA',
-      //   itemDesc: 'Unlock exclusive ecosystem capabilities.',
-      //   href: '/gnana',
-      //   icon: '/images/navbar/gnana',
-      // },
-    ],
-  },
+      }
+    ]
+  }
 ].sort((a, b) => a.order - b.order)
 
 const MATIC_NAV: NavItem[] = [

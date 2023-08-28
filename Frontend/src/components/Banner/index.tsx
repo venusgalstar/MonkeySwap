@@ -6,7 +6,6 @@ import { BannerTypes, ColorProps } from './types'
 import { Button, Flex } from 'components/uikit'
 import { useRouter } from 'next/router'
 import { Svg } from '../uikit'
-import { useHideTips } from '../../views/Bonds/components/FirstTimeCard/useHideTips'
 import Image from 'next/image'
 
 const Banner: React.FC<{
@@ -23,18 +22,13 @@ const Banner: React.FC<{
   const { push } = useRouter()
   const [colorMode] = useColorMode()
   const { t } = useTranslation()
-  // const loaded = `../images/banners/${banner}-${colorMode === 'dark' ? 'night' : 'day'}.svg`
-  const loaded = `../images/banners/${banner}.svg`
-  const handleHideTips = useHideTips()
+  const loaded = `../images/banners/${banner}-${colorMode === 'dark' ? 'night' : 'day'}.svg`
 
   const openBannerLink = (bannerLink: string) => {
     bannerLink.includes('modal') ? push({ search: bannerLink }) : window.open(bannerLink, '_blank')
   }
 
   const handleClick = () => {
-    if (openTips) {
-      handleHideTips(false)
-    }
     openBannerLink(link)
   }
 

@@ -12,7 +12,7 @@ export const FloatingDocs = () => {
   const getDocsLink = () => {
     const networkLabel = NETWORK_LABEL[chainId as SupportedChainId]
     const farmTypes = networkLabel ? FARMS[networkLabel] : ''
-    DOC_LINKS['FARMS'] = `https://apeswap.gitbook.io/apeswap-finance/product-and-features/stake/farms/${farmTypes}`
+    DOC_LINKS['FARMS'] = `https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision`
     return DOC_LINKS[ROUTE_NAMES[asPath ?? '/'] || 'HOME']
   }
   const showScroll = asPath.includes('/farms') || asPath.includes('/liquidity-health')
