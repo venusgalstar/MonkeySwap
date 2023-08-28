@@ -34,9 +34,6 @@ const AddLiquidityV2 = ({ currencyIdA, currencyIdB }: { currencyIdA: string; cur
     error,
   } = useDerivedMintInfo(currencyA ?? undefined, currencyB ?? undefined)
 
-  console.log(' -currencyA', currencyA);
-  console.log(' -currencyB', currencyB);
-
   console.log('dependentField', dependentField);
   console.log('currencies', currencies);
   console.log('currencyBalances', currencyBalances);

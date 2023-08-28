@@ -38,7 +38,7 @@ const Tutorial: React.FC<{
           type: `BNB-dex`,
           title: `Monkeys Market DEX`,
           description: `Securely trade any assets on our decentralized exchange with instant transactions.`,
-          slides: account ? SwapSlides() : [<ConnectWalletSlide key={0} />, ...SwapSlides()],
+          slides: /*account ? SwapSlides() :*/ [<ConnectWalletSlide key={0} />, ...SwapSlides()],
           isConnected: !!account,
         }
       }
@@ -47,7 +47,7 @@ const Tutorial: React.FC<{
           type: `${networkLabel}-farms`,
           title: `Welcome to ApeSwap Farms`,
           description: `Earn tokens by staking liquidity provider (LP) tokens!`,
-          slides: account ? FarmSlides() : [<ConnectWalletSlide key={0} />, ...FarmSlides()],
+          slides: /*account ? FarmSlides() :*/ [<ConnectWalletSlide key={0} />, ...FarmSlides()],
           width: '300px',
           isConnected: !!account,
         }
@@ -57,7 +57,7 @@ const Tutorial: React.FC<{
           type: `jungle-farms`,
           title: `Welcome to Jungle Farms`,
           description: `Earn Partner Tokens by Staking Liquidity!`,
-          slides: account ? FarmSlides() : [<ConnectWalletSlide key={0} />, ...FarmSlides()],
+          slides: /*account ? FarmSlides() :*/ [<ConnectWalletSlide key={0} />, ...FarmSlides()],
           width: '285px',
           isConnected: !!account,
         }
@@ -67,7 +67,7 @@ const Tutorial: React.FC<{
           type: 'pools',
           title: 'Welcome to Staking Pools',
           description: 'Earn tokens by staking BANANA or GNANA!',
-          slides: account ? PoolSlides() : [<ConnectWalletSlide key={0} />, ...PoolSlides()],
+          slides: /*account ? PoolSlides() :*/ [<ConnectWalletSlide key={0} />, ...PoolSlides()],
           isConnected: !!account,
         }
       }

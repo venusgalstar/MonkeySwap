@@ -1,19 +1,14 @@
 import { Flex, Link, Text, Tooltip } from 'components/uikit'
-import { CHAIN_PARAMS, NETWORK_LABEL } from 'config/constants/chains'
 import { useTranslation } from 'contexts/Localization'
 import { styles } from './styles'
 import useIsMobile from '../../hooks/useIsMobile'
-import { getMetamaskLinks } from 'config/constants/tutorials'
 import Slide from './Slide'
-import { SupportedChainId } from '@ape.swap/sdk-core'
 import { useWeb3React } from '@web3-react/core'
 import useModal from 'hooks/useModal'
 import ConnectWalletModal from 'components/ConnectWallet/ConnectWalletModal'
 
 export const SwapSlides = () => {
   const { t } = useTranslation()
-  const { chainId } = useWeb3React()
-  const isMobile = useIsMobile()
 
   return [
     <Slide
@@ -24,7 +19,7 @@ export const SwapSlides = () => {
         <>
           <Text sx={styles.content}>{t('Choose the tokens you want to trade and indicate the desired quantities.')}</Text>
           <Text sx={{ fontWeight: 300 }}>
-            Experience seamless and efficient trading with Monkeys Market DEX.
+            {t(`Experience seamless and efficient trading with Monkeys Market DEX.`)}
           </Text>
         </>
       }
@@ -37,13 +32,13 @@ export const SwapSlides = () => {
         <>
           <Text sx={styles.content}>{t(`Using your connected wallet, approve the selected token. This step only needs to be done once per token.`)}</Text>
           <Text sx={{ fontWeight: 300 }}>
-            Experience seamless and efficient trading with Monkeys Market DEX.
+            {t(`Experience seamless and efficient trading with Monkeys Market DEX.`)}
           </Text>
         </>
       }
     />,
     <Slide
-      key={2}
+      key={3}
       step="Step 4"
       slideTitle="Confirm and Swap"
       slideContent={
@@ -54,7 +49,7 @@ export const SwapSlides = () => {
             )}
           </Text>
           <Text sx={{ fontWeight: 300 }}>
-            Experience seamless and efficient trading with Monkeys Market DEX.
+            {t(`Experience seamless and efficient trading with Monkeys Market DEX.`)}
           </Text>
         </>
       }
@@ -64,58 +59,30 @@ export const SwapSlides = () => {
 
 export const FarmSlides = () => {
   const { t } = useTranslation()
-  const isMobile = useIsMobile()
   return [
     <Slide
       key={1}
-      step="Step 1"
+      step="Step 2"
       slideTitle="Add Liquidity"
       slideContent={
         <>
           <Text>
-            {t('Select the desired farm and click GET LP. This will allow you to easily')}{' '}
-            <Tooltip
-              placement={'topRight'}
-              transformTip="translate(0%, 2%)"
-              body={
-                <Flex sx={styles.tipBody}>
-                  {t('Contribute equal amounts of two tokens to the DEX to facilitate swaps between them.')}
-                </Flex>
-              }
-              sx={{ width: ['250px', '250px', '250px', '350px'] }}
-            >
-              <Text sx={styles.tipTitle}>{t('add liquidity')}</Text>
-            </Tooltip>{' '}
-            {t('and obtain liquidity provider (LP) tokens in exchange.')}
-          </Text>
-          <Text sx={{ fontStyle: 'italic', fontWeight: 300 }}>
-            {t('⚡NEW: You can also')}{' '}
-            <Tooltip
-              placement={'topRight'}
-              transformTip={`translate(${isMobile ? '10%' : '6%'}, 2%)`}
-              body={
-                <Flex sx={styles.tipBody}>
-                  {t('Convert one token directly into an LP token or other product in a single transaction.')}
-                </Flex>
-              }
-              sx={{ width: ['210px', '210px', '210px', '350px'] }}
-            >
-              <Text sx={styles.tipTitle}>ZAP</Text>
-            </Tooltip>{' '}
-            {t('to add liquidity with single tokens!')}
+            {t(
+              `To participate, you'll need to add liquidity. Learn how to add liquidity (https://medium.com/@monkeysmarket48/how-to-farm-2d85890617bd). "click here"`
+            )}
           </Text>
         </>
       }
     />,
     <Slide
       key={2}
-      step="Step 2"
+      step="Step 3"
       slideTitle="Stake"
       slideContent={
         <>
           <Text>
             {t(
-              `Once you have the LP tokens, ENABLE your desired Farm and then click DEPOSIT to stake and start earning.`,
+              `Once you have your LP tokens, click the deposit button and follow the prompts on your Metamask wallet. Stake your desired amount to begin earning Banana Bucks.`,
             )}
           </Text>
         </>
@@ -123,12 +90,12 @@ export const FarmSlides = () => {
     />,
     <Slide
       key={3}
-      step="Step 3"
-      slideTitle="Collect!"
+      step="Step 4"
+      slideTitle="Harvest"
       slideContent={
         <>
           <Text>
-            {t("Don't forget to HARVEST your earnings periodically. You can reinvest them or cash out at any time!")}
+            {t(`Don't forget to periodically harvest your Banana Bucks. You can reinvest them or take some profit. Learn more about the power of compound interest (https://medium.com/@monkeysmarket48/what-is-compound-interest-bdd7560528c1) "click here"`)}
           </Text>
         </>
       }
@@ -1322,7 +1289,6 @@ export const DefaultSlides = () => {
 
 export const ConnectWalletSlide = () => {
   const { t } = useTranslation()
-  const { chainId } = useWeb3React()
   const [onPresentWalletConnectModal] = useModal(
     <ConnectWalletModal onDismiss={() => null} />,
     true,
@@ -1335,11 +1301,14 @@ export const ConnectWalletSlide = () => {
       slideTitle="Connect Your Wallet"
       slideContent={
         <>
+          <Text>
+            {t('To get started, connect your wallet. Please click here to')}
+          </Text>
           <Text sx={styles.yellow} onClick={onPresentWalletConnectModal}>
             {t('Connect Wallet')}
           </Text>
           <Text sx={{ fontWeight: 300 }}>
-            Experience seamless and efficient trading with Monkeys Market DEX.
+            {t('Experience seamless and efficient trading with Monkeys Market DEX.')}
           </Text>
         </>
       }

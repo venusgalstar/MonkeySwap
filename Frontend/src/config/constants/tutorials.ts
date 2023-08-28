@@ -54,10 +54,10 @@ export const FARMS: Record<string, string> = {
 
 export const DOC_LINKS: Record<string, string> = {
   HOME: 'https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision',
-  JUNGLE_FARMS: 'https://apeswap.gitbook.io/apeswap-finance/product-and-features/stake/farms/',
-  FARMS: `https://apeswap.gitbook.io/apeswap-finance/product-and-features/stake/farms/`,
-  SWAP: 'https://apeswap.gitbook.io/apeswap-finance/product-and-features/exchange/swap',
-  POOLS: 'https://apeswap.gitbook.io/apeswap-finance/product-and-features/stake/pools',
+  JUNGLE_FARMS: 'https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision',
+  FARMS: `https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision`,
+  SWAP: 'https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision',
+  POOLS: 'https://monkeys-market.gitbook.io/welcome-to-the-monkeys-market/about-us/vision-mission-and-focus/vision',
   MAXIMIZERS_VAULTS: 'https://apeswap.gitbook.io/apeswap-finance/product-and-features/stake/vaults',
   ADD_LIQUIDITY:
     'https://apeswap.gitbook.io/apeswap-finance/product-and-features/exchange/liquidity/how-to-add-liquidity-v3',

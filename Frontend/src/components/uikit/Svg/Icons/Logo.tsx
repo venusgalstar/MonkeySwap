@@ -1,9 +1,10 @@
 import React from 'react'
 import { SvgProps } from './types'
+import Image from 'next/image'
 
 const Logo: React.FC<SvgProps> = ({ width }) => {
   return (
-    <img src="logo.png"></img>
+    <Image src="/logo.png" width={35} height={35} alt="Logo Image" />
   )
 }
 

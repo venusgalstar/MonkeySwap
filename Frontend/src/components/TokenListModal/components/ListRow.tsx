@@ -42,7 +42,10 @@ const ListRow = ({
       currency?.wrapped?.address,
       currency?.wrapped?.symbol,
       currency?.decimals,
-      currency instanceof WrappedTokenInfo ? currency?.tokenInfo?.logoURI : '',
+      currency instanceof WrappedTokenInfo ? 
+        (currency?.wrapped?.address.toLowerCase() == 
+          '0x603c7f932ED1fc6575303D8Fb018fDCBb0f39a95'.toLowerCase() ? 
+          currency?.tokenInfo?.logoURI : '/banana.png') : '',
     ).then(() => '')
   }
 
