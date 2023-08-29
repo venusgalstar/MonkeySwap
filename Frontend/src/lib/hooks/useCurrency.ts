@@ -99,8 +99,8 @@ export function useCurrencyFromMap(
     nativeCurrency &&
       (currencyId?.toUpperCase() === 'ETH' || currencyId === '0x0000000000000000000000000000000000000000'),
   )
-  const token = useTokenFromMapOrNetwork(tokens, isNative ? undefined : currencyId)
 
+  const token = useTokenFromMapOrNetwork(tokens, isNative ? undefined : currencyId)
   if (currencyId === null || currencyId === undefined) return null
 
   // this case so we use our builtin wrapped token instead of wrapped tokens on token lists

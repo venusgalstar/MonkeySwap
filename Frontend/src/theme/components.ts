@@ -1,5 +1,5 @@
 export const buttonHover = {
-  '&:not([disabled])': { borderColor: '#FFDA00', background: '#FFDA00' },
+  '&:not([disabled])': { borderColor: '##a96352', background: '##a96352' },
   '&:disabled': {},
 }
 

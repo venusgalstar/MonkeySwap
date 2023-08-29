@@ -9,7 +9,8 @@ const AddLiquidityPageV2 = () => {
   const { query } = useRouter()
   const [currencyIdA, currencyIdB] = (query.currency as string[]) || [undefined, undefined]
   const bananaAddress = BANANA_ADDRESSES[chainId || 56]
-
+  console.log(">>> currencyIDA, currencyIdB", currencyIdA, currencyIdB, bananaAddress, chainId)
+  console.log(">>> ", currencyIdA ?? 'ETH', currencyIdB ?? bananaAddress)
   return (
     <PageContainer variant="dex">
       <AddLiquidityV2 currencyIdA={currencyIdA ?? 'ETH'} currencyIdB={currencyIdB ?? bananaAddress} />

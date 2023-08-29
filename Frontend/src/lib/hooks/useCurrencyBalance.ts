@@ -4,6 +4,7 @@ import { useWeb3React } from '@web3-react/core'
 import ERC20ABI from 'config/abi/erc20.json'
 
 import JSBI from 'jsbi'
+import { useTokenBalancesWithChain } from 'hooks/balances/useTokenBalancesWithChain'
 import { useMultipleContractSingleData, useSingleCallResult } from 'lib/hooks/multicall'
 import { useEffect, useMemo, useState } from 'react'
 
@@ -15,9 +16,7 @@ import BigNumber from 'bignumber.js'
 import useNativeCurrency from './useNativeCurrency'
 import multicallV2Abi from '../../config/abi/multicallv2.json'
 import { MULTICALL_V2 } from '../../config/constants/addresses'
-
-import { useTokenContract } from 'hooks/useContract'
-import ReturnCard from 'views/Gnana/components/ReturnCard'
+import { getTokenAddress } from 'lib/utils/analytics'
 
 /**
  * Returns a map of the given addresses to their eventually consistent ETH balances.
@@ -85,61 +84,24 @@ export function useTokenBalancesWithLoadingIndicator(
     () => tokens?.filter((t?: Token): t is Token => isAddress(t?.address) !== false && t?.chainId === chainId) ?? [],
     [chainId, tokens],
   )
-  const validatedTokenAddresses = useMemo(() => validatedTokens.map((vt) => vt.address), [validatedTokens])
 
-  console.log('use: validatedTokenAddr', validatedTokenAddresses);
+  const balances = useTokenBalancesWithChain(address, tokens?.[0], chainId);
 
-  // if (chainId != 97) {
-    const balances = useMultipleContractSingleData(
-      validatedTokenAddresses,
-      ERC20Interface,
-      'balanceOf',
-      useMemo(() => [address], [address]),
-      tokenBalancesGasRequirement,
-    )
-    console.log("use: balances=", balances)
+  const res = address && validatedTokens.length > 0
+    ? validatedTokens.reduce<{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }>((memo, token, i) => {
+        const value = balances?.[token.address]
+        const amount = value ? JSBI.BigInt(value.quotient.toString()) : undefined
+        if (amount) {
+          memo[token.address] = CurrencyAmount.fromRawAmount(token, amount)
+        }
+        return memo
+      }, {})
+    : {};
 
-    const anyLoading: boolean = useMemo(() => balances.some((callState) => callState.loading), [balances])
-
-    return useMemo(
-      () => [
-        address && validatedTokens.length > 0
-          ? validatedTokens.reduce<{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }>((memo, token, i) => {
-              const value = balances?.[i]?.result?.[0]
-              const amount = value ? JSBI.BigInt(value.toString()) : undefined
-              if (amount) {
-                memo[token.address] = CurrencyAmount.fromRawAmount(token, amount)
-              }
-              return memo
-            }, {})
-          : {},
-        anyLoading,
-      ],
-      [address, validatedTokens, anyLoading, balances],
-    )
-  // } else {
-    // BSC testnet
-    // return [{}, false];
-    // if (validatedTokenAddresses.length == 0) {
-    //   return [{}, false];
-    // }
-
-    // const tokenContract = useTokenContract(validatedTokenAddresses?.[0], true);
-    // if (!tokenContract) {
-    //   return [{}, false];
-    // }
-
-    // const amount = tokenContract?.balanceOf?.(address ? address : '');
-    // let value = JSBI.BigInt('0');
-    // amount?.then((val) => {
-    //   if (val != undefined) {
-    //     value = JSBI.BigInt(val.toString());
-    //   }
-    // });
-    // console.log('use: token Balance', value);
-
-    // return [{[address]: CurrencyAmount.fromRawAmount(validatedTokens[0], value)}, true];
-  // }
+  return useMemo(
+    () => [ res, false ],
+    [res],
+  )
 }
 
 export function useTokenBalances(
@@ -168,15 +130,8 @@ export function useCurrencyBalances(
     [currencies],
   )
 
-  console.log('use: account', account);
-  console.log('use: currency', currencies?.[0]);
-
   const tokenBalances = useTokenBalances(account, tokens)
   const [ethBalance, loadingNativeBalance] = useNativeCurrencyBalances(currencies?.[0]?.chainId)
-
-  console.log('use: tokenBalance', tokenBalances);
-  console.log('use: ethBalance', ethBalance);
-  console.log('use: loadingNativeBalance', loadingNativeBalance);
 
   return useMemo(
     () =>

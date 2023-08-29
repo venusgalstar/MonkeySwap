@@ -11,6 +11,8 @@ import NavOptionMobile from './components/Navigation/NavOptionMobile'
 import { BNB_NAV, getChainNavList } from './constants'
 import { NavItem } from './types'
 
+import ThemeSwitcher from 'components/ThemeSwitcher'
+
 // Hooks
 import { useWeb3React } from '@web3-react/core'
 import { useEffect, useState } from 'react'
@@ -55,6 +57,7 @@ const NavBarNew = () => {
         <Flex sx={{ gap: ['8px', '8x', '8px', '8px', '30px'] }}>
           <NavBarNetworkSelect placement="navbar" />
           {account ? <AccountLoggedIn /> : <ConnectWalletButton navBarFlag />}
+          <ThemeSwitcher />
         </Flex>
       </Flex>
 

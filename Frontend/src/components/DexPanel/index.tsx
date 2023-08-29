@@ -30,7 +30,9 @@ const DexPanel = ({
                   }: DexPanelProps) => {
   const { account } = useWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
+  console.log(">>> DexPanel selectedCurrencyBalance=", selectedCurrencyBalance, currency)
   const currencyBalance = userBalance ? userBalance?.toFixed(6) : selectedCurrencyBalance?.toSignificant(6) || '0'
+  console.log(">>> DexPanel currencyBalance=", currencyBalance)
   const { t } = useTranslation()
   const [usdVal, loadingUsdValue] = useTokenPriceUsd(currency ?? undefined)
 

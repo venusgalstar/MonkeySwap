@@ -67,9 +67,12 @@ export const FarmSlides = () => {
         <>
           <Text sx={{textOverflow: 'ellipsis', overflow: 'hidden'}}>
             {t(
-              `To participate, you'll need to add liquidity. Learn how to add liquidity (https://medium.com/@monkeysmarket48/how-to-farm-2d85890617bd). "click here"`
+              `To participate, you'll need to add liquidity. Learn how to add liquidity.`
             )}
           </Text>
+          <Link href="https://medium.com/@monkeysmarket48/how-to-farm-2d85890617bd" target="_blank" rel="noreferrer noopener" sx={styles.yellow}>
+            {t('Click here')}
+          </Link>
         </>
       }
     />,
@@ -94,8 +97,11 @@ export const FarmSlides = () => {
       slideContent={
         <>
           <Text sx={{textOverflow: 'ellipsis', overflow: 'hidden'}}>
-            {t(`Don't forget to periodically harvest your Banana Bucks. You can reinvest them or take some profit. Learn more about the power of compound interest (https://medium.com/@monkeysmarket48/what-is-compound-interest-bdd7560528c1) "click here"`)}
+            {t(`Don't forget to periodically harvest your Banana Bucks. You can reinvest them or take some profit. Learn more about the power of compound interest`)}
           </Text>
+          <Link href="https://medium.com/@monkeysmarket48/what-is-compound-interest-bdd7560528c1" target="_blank" rel="noreferrer noopener" sx={styles.yellow}>
+            {t('Click here')}
+          </Link>
         </>
       }
     />,

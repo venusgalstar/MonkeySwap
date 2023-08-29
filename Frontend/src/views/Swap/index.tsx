@@ -96,7 +96,6 @@ const Swap = () => {
           sx={{ width: '100%', justifyContent: 'flex-end', height: '50px', alignItems: 'center', position: 'relative' }}
         >
           <SwapSwitchButton onClick={onSwitchTokens} />
-          <Risk chainId={currencies[Field.OUTPUT]?.currency?.chainId} currency={currencies[Field.OUTPUT]?.currency} />
         </Flex>
         <OmniChainPanel
           panelText="To"

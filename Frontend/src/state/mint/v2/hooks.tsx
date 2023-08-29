@@ -12,7 +12,6 @@ import { useCurrencyBalances } from 'lib/hooks/useCurrencyBalance'
 import { AppState } from 'state'
 import { Field, typeInput } from './actions'
 import { useTranslation } from 'contexts/Localization'
-import { Text } from 'components/uikit'
 
 const ZERO = JSBI.BigInt(0)
 
@@ -103,7 +102,8 @@ export function useDerivedMintInfo(
         pair &&
         JSBI.equal(pair.reserve0.quotient, ZERO) &&
         JSBI.equal(pair.reserve1.quotient, ZERO),
-    )
+    ) ||
+    pair == null
 
   // balances
   const balances = useCurrencyBalances(

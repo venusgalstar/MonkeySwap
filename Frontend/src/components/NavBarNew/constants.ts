@@ -22,7 +22,7 @@ const DEFAULT_NAV: NavItem[] = [
     items: [
       {
         itemLabel: 'Swap',
-        itemDesc: 'Trade any tokens across several chains.',
+        itemDesc: 'Trade your favorite token.',
         href: '/swap',
         icon: '/images/navbar/swap',
       },
@@ -43,7 +43,7 @@ const DEX_ONLY_EXCHANGE_ITEMS = {
   items: [
     {
       itemLabel: 'Swap',
-      itemDesc: 'Trade any tokens across several chains.',
+      itemDesc: 'Trade your favorite token.',
       href: '/swap',
       icon: '/images/navbar/swap',
     }
@@ -59,12 +59,6 @@ export const BNB_NAV: NavItem[] = [
     order: 4,
     icon: '/images/navbar/pools',
     items: [
-      {
-        itemLabel: 'Pools',
-        itemDesc: 'Stake GNANA or BANANA to earn tokens.',
-        href: '/pools',
-        icon: '/images/navbar/pools',
-      },
       {
         itemLabel: 'Farms',
         itemDesc: 'Stake LP Tokens to earn other tokens.',

@@ -183,12 +183,6 @@ const ListViewMenu: React.FC<ListMenuProps> = ({
           <Flex sx={{ width: '100%' }}>{actionButton}</Flex>
         </Flex>
       </>
-      {showMonkeyImage &&
-        (colorMode === 'dark' ? (
-          <Image src="/images/farm-night-farmer.svg" sx={styles.monkey} alt="" />
-        ) : (
-          <Image src="/images/farm-day-farmer.svg" sx={styles.monkey} alt="" />
-        ))}
     </Flex>
   )
 }
