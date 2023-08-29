@@ -3,7 +3,6 @@ import { useTranslation } from 'contexts/Localization'
 import { styles } from './styles'
 import useIsMobile from '../../hooks/useIsMobile'
 import Slide from './Slide'
-import { useWeb3React } from '@web3-react/core'
 import useModal from 'hooks/useModal'
 import ConnectWalletModal from 'components/ConnectWallet/ConnectWalletModal'
 
@@ -66,7 +65,7 @@ export const FarmSlides = () => {
       slideTitle="Add Liquidity"
       slideContent={
         <>
-          <Text>
+          <Text sx={{textOverflow: 'ellipsis', overflow: 'hidden'}}>
             {t(
               `To participate, you'll need to add liquidity. Learn how to add liquidity (https://medium.com/@monkeysmarket48/how-to-farm-2d85890617bd). "click here"`
             )}
@@ -94,7 +93,7 @@ export const FarmSlides = () => {
       slideTitle="Harvest"
       slideContent={
         <>
-          <Text>
+          <Text sx={{textOverflow: 'ellipsis', overflow: 'hidden'}}>
             {t(`Don't forget to periodically harvest your Banana Bucks. You can reinvest them or take some profit. Learn more about the power of compound interest (https://medium.com/@monkeysmarket48/what-is-compound-interest-bdd7560528c1) "click here"`)}
           </Text>
         </>

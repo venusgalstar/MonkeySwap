@@ -13,66 +13,66 @@ export const DEFAULT_META: PageMeta = {
 
 export const customMeta: { [key: string]: PageMeta } = {
   '/': {
-    title: 'Home Page | ApeSwap: Your One-Stop DeFi Hub',
+    title: 'Home Page',
     description:
       'ApeSwap is a DeFi Hub on BNB Chain, Polygon, & Ethereum. Swap, stake, and lend cryptocurrencies, from stablecoins to altcoins - all in one place.',
   },
   '/swap': {
-    title: 'Swap | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'Swap',
     description: 'Swap between hundreds of crypto tokens using our decentralized exchange.',
   },
   '/apestats': {
-    title: 'ApeStats | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'ApeStats',
     description: 'Track your portfolio on ApeSwap using our custom dashboard.',
   },
   '/nft': {
-    title: 'Non Fungible Apes | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'Non Fungible Apes',
     description: 'Buy and sell ApeSwap NFTs and join our NFT community.',
   },
   '/farms': {
-    title: 'Farms | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'Farms',
     description: 'Stake your liquidity provider (LP) tokens in Farms to earn.',
   },
   '/jungle-farms': {
-    title: 'Jungle Farms | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'Jungle Farms',
     description: 'Stake your liquidity provider (LP) tokens to earn partner project tokens.',
   },
   '/pools': {
-    title: 'Staking Pools | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'Staking Pools',
     description: 'Stake BANANA in Staking Pools to earn partner project tokens.',
   },
   '/liquidity': {
-    title: 'Liquidity | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'Liquidity',
     description: 'Add liquidity to the ApeSwap decentralized exchange to create LPs and earn trading fees.',
   },
   '/add-liquidity': {
-    title: 'Liquidity | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'Liquidity',
     description: 'Add liquidity to the ApeSwap decentralized exchange to create LPs and earn trading fees.',
   },
   '/iao': {
-    title: 'Initial Ape Offerings | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'Initial Ape Offerings',
     description: 'Launch your crypto project with ApeSwap, or commit into Initial Ape Offerings.',
   },
   '/gnana': {
-    title: 'GNANA | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'GNANA',
     description: 'Convert your BANANA to GNANA to gain exclusive access to governance, pools, and more.',
   },
   '/maximizers': {
-    title: 'BANANA Maximizers | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'BANANA Maximizers',
     description: 'Stake your liquidity provider (LP) tokens in auto-compounding vaults to earn BANANA.',
   },
   '/auction': {
-    title: 'Auction | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'Auction',
   },
   '/staking': {
-    title: 'NFA Staking | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'NFA Staking',
   },
   '/bonds': {
-    title: 'ApeSwap Bonds | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'ApeSwap Bonds',
     description: 'Get BANANA and partner project tokens at a discount using your liquidity provider (LP) tokens.',
   },
   '/limit-orders': {
-    title: 'Limit Orders | ApeSwap : Your One-Stop DeFi Hub',
+    title: 'Limit Orders',
     description: 'Trade crypto tokens at the price you want using limit orders on the ApeSwap DEX.',
   },
   '/liquidity-health': {

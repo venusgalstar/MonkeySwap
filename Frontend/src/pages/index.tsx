@@ -1,5 +1,5 @@
-import HomePage from './home'
+import SwapPage from './swap'
 
-export default function Index({ randomImage, randomLHDImage }: { randomImage: number; randomLHDImage: number }) {
-  return <HomePage randomImage={randomImage} randomLHDImage={randomLHDImage} />
+export default function Index() {
+  return <SwapPage />
 }

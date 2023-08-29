@@ -55,28 +55,6 @@ export const useFarms = (account: string): Farm[] | undefined => {
   return farms
 }
 
-// export const useFarmFromPid = (id: string): Farm => {
-//   const { chainId } = useWeb3React()
-//   const farm = useSelector((state: AppState) => state.farms.data[chainId]?.find((f: any) => f.id === id))
-//   return farm
-// }
-
-// export const useFarmFromSymbol = (lpSymbol: string): Farm => {
-//   const farm = useSelector((state: AppState) => state.farms.data.find((f) => f.lpSymbol === lpSymbol))
-//   return farm
-// }
-
-// export const useFarmUser = (pid) => {
-//   const farm = useFarmFromPid(pid)
-
-//   return {
-//     allowance: farm?.userData ? new BigNumber(farm.userData.allowance) : new BigNumber(0),
-//     tokenBalance: farm?.userData ? new BigNumber(farm.userData.tokenBalance) : new BigNumber(0),
-//     stakedBalance: farm?.userData ? new BigNumber(farm.userData.stakedBalance) : new BigNumber(0),
-//     earnings: farm?.userData ? new BigNumber(farm.userData.earnings) : new BigNumber(0),
-//   }
-// }
-
 export const useFarmTags = (chainId: number) => {
   const { Tags }: StatsState = useSelector((state: AppState) => state.stats)
   const farmTags = Tags?.[`${chainId}`]?.farms
