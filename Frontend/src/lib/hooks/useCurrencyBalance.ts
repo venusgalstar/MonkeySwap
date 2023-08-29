@@ -75,32 +75,76 @@ const tokenBalancesGasRequirement = { gasRequired: 500_000 }
 /**
  * Returns a map of token addresses to their eventually consistent token balances for a single account.
  */
+// export function useTokenBalancesWithLoadingIndicator(
+//   address?: string,
+//   tokens?: (Token | undefined)[],
+// ): [{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }, boolean] {
+//   const { chainId } = useWeb3React() // we cannot fetch balances cross-chain
+//   const validatedTokens: Token[] = useMemo(
+//     () => tokens?.filter((t?: Token): t is Token => isAddress(t?.address) !== false && t?.chainId === chainId) ?? [],
+//     [chainId, tokens],
+//   )
+
+//   const balances = useTokenBalancesWithChain(address, tokens?.[0], chainId);
+
+//   const res = address && validatedTokens.length > 0
+//     ? validatedTokens.reduce<{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }>((memo, token, i) => {
+//         const value = balances?.[token.address]
+//         const amount = value ? JSBI.BigInt(value.quotient.toString()) : undefined
+//         if (amount) {
+//           memo[token.address] = CurrencyAmount.fromRawAmount(token, amount)
+//         }
+//         return memo
+//       }, {})
+//     : {};
+
+//   return useMemo(
+//     () => [ res, false ],
+//     [res],
+//   )
+// }
 export function useTokenBalancesWithLoadingIndicator(
   address?: string,
   tokens?: (Token | undefined)[],
 ): [{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }, boolean] {
   const { chainId } = useWeb3React() // we cannot fetch balances cross-chain
+  console.log("use: chainId",chainId);
   const validatedTokens: Token[] = useMemo(
     () => tokens?.filter((t?: Token): t is Token => isAddress(t?.address) !== false && t?.chainId === chainId) ?? [],
     [chainId, tokens],
   )
+  console.log("use: validatedTokens",validatedTokens);
+  console.log("use: address",address);
+  const validatedTokenAddresses = useMemo(() => validatedTokens.map((vt) => vt.address), [validatedTokens])
 
-  const balances = useTokenBalancesWithChain(address, tokens?.[0], chainId);
+  console.log('use: validatedTokenAddr', validatedTokenAddresses);
 
-  const res = address && validatedTokens.length > 0
-    ? validatedTokens.reduce<{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }>((memo, token, i) => {
-        const value = balances?.[token.address]
-        const amount = value ? JSBI.BigInt(value.quotient.toString()) : undefined
-        if (amount) {
-          memo[token.address] = CurrencyAmount.fromRawAmount(token, amount)
-        }
-        return memo
-      }, {})
-    : {};
+  const balances = useMultipleContractSingleData(
+    validatedTokenAddresses,
+    ERC20Interface,
+    'balanceOf',
+    useMemo(() => [address], [address]),
+    tokenBalancesGasRequirement,
+  )
+  console.log("use: balances=", balances)
+
+  const anyLoading: boolean = useMemo(() => balances.some((callState) => callState.loading), [balances])
 
   return useMemo(
-    () => [ res, false ],
-    [res],
+    () => [
+      address && validatedTokens.length > 0
+        ? validatedTokens.reduce<{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }>((memo, token, i) => {
+            const value = balances?.[i]?.result?.[0]
+            const amount = value ? JSBI.BigInt(value.toString()) : undefined
+            if (amount) {
+              memo[token.address] = CurrencyAmount.fromRawAmount(token, amount)
+            }
+            return memo
+          }, {})
+        : {},
+      anyLoading,
+    ],
+    [address, validatedTokens, anyLoading, balances],
   )
 }
 
