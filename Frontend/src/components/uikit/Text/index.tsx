@@ -1,3 +1,5 @@
+import { useTranslation } from 'contexts/Localization'
+import React from 'react'
 import { Text as ThemeUIText } from 'theme-ui'
 import { TextProps, variants } from './types'
 

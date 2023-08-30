@@ -47,8 +47,6 @@ const List = ({
   const searchTokenIsAdded = useIsUserAddedToken(searchToken)
   const isAddressSearch = isAddress(debouncedQuery)
 
-  console.log('searchToken', searchToken);
-
   //this function takes the tokens of defaultToken object and filters the tokens we want users zap from.
   const inputList: Record<string, any> = useMemo(() => {
     if (!zapInputTokens) return {}

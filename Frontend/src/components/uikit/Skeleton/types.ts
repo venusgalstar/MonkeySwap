@@ -1,8 +1,8 @@
 import { BoxProps } from 'theme-ui'
 
 export enum animation {
-  PULSE = 'pulse',
   WAVES = 'waves',
+  PULSE = 'pulse',
 }
 
 export enum variant {

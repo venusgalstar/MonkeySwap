@@ -4,8 +4,7 @@ import { useWeb3React } from '@web3-react/core'
 import ERC20ABI from 'config/abi/erc20.json'
 
 import JSBI from 'jsbi'
-import { useTokenBalancesWithChain } from 'hooks/balances/useTokenBalancesWithChain'
-import { useMultipleContractSingleData, useSingleCallResult } from 'lib/hooks/multicall'
+import { useMultipleContractSingleData } from 'lib/hooks/multicall'
 import { useEffect, useMemo, useState } from 'react'
 
 import { isAddress } from '../../utils'
@@ -16,7 +15,6 @@ import BigNumber from 'bignumber.js'
 import useNativeCurrency from './useNativeCurrency'
 import multicallV2Abi from '../../config/abi/multicallv2.json'
 import { MULTICALL_V2 } from '../../config/constants/addresses'
-import { getTokenAddress } from 'lib/utils/analytics'
 
 /**
  * Returns a map of the given addresses to their eventually consistent ETH balances.
@@ -75,49 +73,16 @@ const tokenBalancesGasRequirement = { gasRequired: 500_000 }
 /**
  * Returns a map of token addresses to their eventually consistent token balances for a single account.
  */
-// export function useTokenBalancesWithLoadingIndicator(
-//   address?: string,
-//   tokens?: (Token | undefined)[],
-// ): [{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }, boolean] {
-//   const { chainId } = useWeb3React() // we cannot fetch balances cross-chain
-//   const validatedTokens: Token[] = useMemo(
-//     () => tokens?.filter((t?: Token): t is Token => isAddress(t?.address) !== false && t?.chainId === chainId) ?? [],
-//     [chainId, tokens],
-//   )
-
-//   const balances = useTokenBalancesWithChain(address, tokens?.[0], chainId);
-
-//   const res = address && validatedTokens.length > 0
-//     ? validatedTokens.reduce<{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }>((memo, token, i) => {
-//         const value = balances?.[token.address]
-//         const amount = value ? JSBI.BigInt(value.quotient.toString()) : undefined
-//         if (amount) {
-//           memo[token.address] = CurrencyAmount.fromRawAmount(token, amount)
-//         }
-//         return memo
-//       }, {})
-//     : {};
-
-//   return useMemo(
-//     () => [ res, false ],
-//     [res],
-//   )
-// }
 export function useTokenBalancesWithLoadingIndicator(
   address?: string,
   tokens?: (Token | undefined)[],
 ): [{ [tokenAddress: string]: CurrencyAmount<Token> | undefined }, boolean] {
   const { chainId } = useWeb3React() // we cannot fetch balances cross-chain
-  console.log("use: chainId",chainId);
   const validatedTokens: Token[] = useMemo(
     () => tokens?.filter((t?: Token): t is Token => isAddress(t?.address) !== false && t?.chainId === chainId) ?? [],
     [chainId, tokens],
   )
-  console.log("use: validatedTokens",validatedTokens);
-  console.log("use: address",address);
   const validatedTokenAddresses = useMemo(() => validatedTokens.map((vt) => vt.address), [validatedTokens])
-
-  console.log('use: validatedTokenAddr', validatedTokenAddresses);
 
   const balances = useMultipleContractSingleData(
     validatedTokenAddresses,
@@ -126,7 +91,6 @@ export function useTokenBalancesWithLoadingIndicator(
     useMemo(() => [address], [address]),
     tokenBalancesGasRequirement,
   )
-  console.log("use: balances=", balances)
 
   const anyLoading: boolean = useMemo(() => balances.some((callState) => callState.loading), [balances])
 

@@ -32,10 +32,6 @@ export function BlockNumberProvider({ children }: { children: ReactNode }) {
   const { chainId: activeChainId, provider } = useWeb3React()
   const [{ chainId, block }, setChainBlock] = useState<{ chainId?: number; block?: number }>({ chainId: activeChainId })
 
-  console.log('use: activeChainId', activeChainId);
-  console.log('use: chainId', chainId);
-  console.log('use: block', block);
-
   const onBlock = useCallback(
     (block: number) => {
       setChainBlock((chainBlock) => {

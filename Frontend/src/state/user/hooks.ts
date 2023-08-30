@@ -57,7 +57,6 @@ export function useUserAddedTokensOnChain(chainId: number | undefined | null): T
     const tokenMap: Token[] = serializedTokensMap?.[chainId]
       ? Object.values(serializedTokensMap[chainId]).map((value) => deserializeToken(value, UserAddedToken))
       : []
-
     return tokenMap
   }, [serializedTokensMap, chainId])
 }
@@ -112,9 +111,6 @@ export function useUserZapSlippageTolerance(): [Percent, (slippageTolerance: Per
     () => (!userSlippageToleranceRaw ? new Percent(50, 10_000) : new Percent(userSlippageToleranceRaw, 10_000)),
     [userSlippageToleranceRaw],
   )
-
-
-
 
   const dispatch = useAppDispatch()
   const setUserSlippageTolerance = useCallback(
@@ -224,9 +220,6 @@ export function useTrackedTokenPairs(): [Token, Token][] {
     if (!chainId || !savedSerializedPairs) return []
     const forChain = savedSerializedPairs[chainId]
     if (!forChain) return []
-
-  
-
 
     return Object.keys(forChain).map((pairId) => {
       return [deserializeToken(forChain[pairId].token0), deserializeToken(forChain[pairId].token1)]
